@@ -1,1 +1,1 @@
-# educacionit-react
+# EducacionIT- Fundamentos de ReactJS (ES6)
