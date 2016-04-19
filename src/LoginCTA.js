@@ -6,7 +6,7 @@ export default class LoginCTA extends React.Component {
         const showAsButton = (this.props.isButton) ? 'button expanded': '';
         return (
             <p className={textCentred}>
-                <a href="#" className={showAsButton}>{this.props.copy}</a>
+                <a href="#" className={showAsButton} ref="callToAction">{this.props.copy}</a>
             </p>
         );
     }
