@@ -21,7 +21,7 @@ gulp.task('deploy', function (){
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['./app/*.js'], ['scripts']);
+    gulp.watch(['./src/*.js'], ['scripts']);
 });
 
 
@@ -30,7 +30,7 @@ gulp.task('default', ['scripts','watch']);
 function bundleApp(isProduction) {
     scriptsCount++;
     var appBundler = browserify({
-        entries: './app/app.js',
+        entries: './src/app.js',
         debug: true
     })
 
