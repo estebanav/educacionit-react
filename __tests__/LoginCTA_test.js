@@ -1,31 +1,32 @@
-// __tests__/LoginCTA-test.js
-'use strict';
+  // __tests__/LoginCTA-test.js
+  'use strict';
 
-jest.unmock('../src/LoginCTA.js');
+  jest.unmock('../src/LoginCTA.js');
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
-import LoginCTA from '../src/LoginCTA.js';
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import TestUtils from 'react-addons-test-utils';
+  import LoginCTA from '../src/LoginCTA.js';
 
 describe('LoginCTA', () => {
 
-  let loginCTA;
+  let testDocument, renderLoginCTA;
 
   beforeEach(function() {
     // Render a LoginCTA with a copy in the document
-    loginCTA = TestUtils.renderIntoDocument(
-        <LoginCTA copy="Test Copy" isTextCentred={true}/>
+    renderLoginCTA = <LoginCTA copy="Test Copy" isTextCentred={true}/>;
+    testDocument = TestUtils.renderIntoDocument(
+        renderLoginCTA
     );
   });
 
   it('copy Test Copy is rendered correctly', () => {
-    const loginCTANode = ReactDOM.findDOMNode(loginCTA);
-    expect(loginCTA.refs.callToAction.innerHTML).toEqual('Test Copy');
+    const loginCTANode = ReactDOM.findDOMNode(testDocument);
+    expect(testDocument.refs.callToAction.innerHTML).toEqual('Test Copy');
   });
 
   it('component has got text-center class', () => {
-    expect(TestUtils.findRenderedDOMComponentWithClass(loginCTA,'text-center')).not.toEqual(false);
+    expect(TestUtils.findRenderedDOMComponentWithClass(testDocument,'text-center')).not.toEqual(false);
   });
 
 });
