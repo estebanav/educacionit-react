@@ -1,8 +1,7 @@
-import ReactDOM  from 'react-dom';
-import React from 'react';
-import Login from './Login';
+﻿import React from 'react';
+import dispatcher from './dispatcher';
+import AppView from './views/AppView';
 
-ReactDOM.render(
-    <Login/>,
-    document.getElementById('body')
-);
+dispatcher.dispatch('APPINIT');
+
+React.render(<AppView/>, document.getElementById('root'));
